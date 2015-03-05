@@ -4,7 +4,7 @@
     <div id="masonryContainer">
       <% @tiles.each do |tile| %>
         <div class="masonry-brick">
-          <%= render "tile", locals: { tile: tile } %>
+          <%= render partial: "tile", locals: { tile: tile } %>
         </div>
       <% end %>
     </div>
