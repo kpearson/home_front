@@ -10,12 +10,13 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'unicorn'
 gem 'foundation-rails'
+gem 'puma'
 gem 'omniauth-twitter'
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
