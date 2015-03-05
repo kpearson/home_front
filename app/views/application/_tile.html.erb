@@ -1,0 +1,7 @@
+<div class="tile">
+  <ul>
+    <% tile.links.each do |link|  %>
+      <li><%= link_to link.description, link.url %>
+    <% end %>
+  </ul>
+</div>
