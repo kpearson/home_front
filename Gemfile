@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'omniauth-twitter'
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -27,7 +28,6 @@ group :test, :development do
   gem 'guard'
   gem 'pry-rails'
   gem 'guard-rspec', require: false
-  gem 'dotenv-rails', :groups => [:development, :test]
   gem 'database_cleaner'
   gem 'better_errors'
   gem 'poltergeist'
