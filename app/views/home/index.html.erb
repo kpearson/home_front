@@ -1,12 +1,15 @@
 <!-- Masonry Container -->
 <div class="row">
   <div class="large-12 columns">
-    <div id="masonryContainer">
-      <% @tiles.each do |tile| %>
-        <div class="masonry-brick">
-          <%= render partial: "tile", locals: { tile: tile } %>
-        </div>
-      <% end %>
+    <div id="tile-board">
     </div>
   </div>
 </div>
+
+<% content_for :before_javascript do %>
+  <script>
+    window.onRoutesInitialized = function () {
+      HomeFront.initialTiles = <%= raw @tiles.to_json %>;
+    }
+  </script>
+<% end %>

@@ -35,3 +35,6 @@ group :test, :development do
   gem 'binding_of_caller'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-backbone'
+end

@@ -1,7 +1,7 @@
-class HomeController < ApplicationController
+class TilesController < ActionController::Base
   def index
-    #@tiles = User.find(2).tiles
-    @tiles = [
+=begin
+    tiles = [
       {
         "title" => "tile1",
         "links" => [
@@ -29,5 +29,12 @@ class HomeController < ApplicationController
         ]
       }
     ]
+    render json: {tiles: tiles }
+=end
+
+    tiles = Tile.all
+    render json: {
+      tiles: tiles.map { |tile| tile.to_json }
+    }
   end
 end
