@@ -13,7 +13,7 @@
       <ul class="right">
         <% if current_user %>
           Welcome <%= current_user.name %>
-          <%= link_to "Sign Out" %>
+          <%= link_to "Sign Out", signout_path %>
         <% else %>
           <li class="active"><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
         <% end %>
