@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   has_many :tiles
 
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["user_info"]["name"]
-    end
+  def self.find_or_create_from_auth(auth)
+    user = User.find_or_create_by(provider: auth.provider, uid: auth.provider)
+
+   # user.email = auth.info.email
+    user.uid   = auth.info.uid
+    user.name  = auth.info.name
+    user.save
+    user
   end
 end
