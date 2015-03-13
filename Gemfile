@@ -17,6 +17,8 @@ gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
+gem 'active_model_serializers'
+gem 'ejs'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,40 +1,46 @@
-class TilesController < ActionController::Base
+class TilesController < ApplicationController
   def index
-=begin
-    tiles = [
-      {
-        "title" => "tile1",
-        "links" => [
-          {
-            "description" => "First link",
-            "url" => "example.com"
-          },
-          {
-            "description" => "Second link",
-            "url" => "example.com"
-          }
-        ]
-      },
-      {
-        "title" => "tile2",
-        "links" => [
-          {
-            "description" => "Third link",
-            "url" => "example.com"
-          },
-          {
-            "description" => "Forth link",
-            "url" => "example.com"
-          }
-        ]
-      }
-    ]
-    render json: {tiles: tiles }
-=end
-
-    tiles = Tile.all
+    tiles = current_user.tiles.all
     render json: {
       tiles: tiles.map { |tile| tile.to_json }
     }
+  end
+
+  def new
+    @tile = Tile.new
+    @links = @tile.links.build
+  end
+
+  def create
+    # require 'pry'; binding.pry
+    @tile = Tile.new(tile_params)
+    if @tile.save
+      redirect_to home_path
+    else
+      render :new
+    end
+  end
+
+  def update
+    #tile = current_user.tiles.find(params[:id])
+    # binding.pry
+    tile = Tile.find(params[:id])
+    tile.links.update_all(link_params)
+
+    if tile.save
+      render json: tile
+    else
+      # ...
+    end
+  end
+
+  private
+
+  def tile_params
+    params.permit(:title, links: [:description, :url])
+  end
+
+  def link_params
+    params.permit(:description, :url)
   end
 end

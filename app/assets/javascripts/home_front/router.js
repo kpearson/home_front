@@ -23,11 +23,6 @@
           parentView: tileBoardView
         });
         tileView.render();
-        /*
-        tile.on("change", function () {
-          tileView.render();
-        })
-        */
       })
     }
   })

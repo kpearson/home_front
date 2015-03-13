@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   has_many :tiles
 
   def self.find_or_create_from_auth(auth)
-    user = User.find_or_create_by(provider: auth.provider, uid: auth.provider)
+    user = User.find_or_create_by(provider: auth.provider, uid: auth.uid)
 
-   # user.email = auth.info.email
-    user.uid   = auth.info.uid
-    user.name  = auth.info.name
+    user.provider = auth.provider
+    user.uid      = auth.uid
+    user.name     = auth.info.name
     user.save
     user
   end
