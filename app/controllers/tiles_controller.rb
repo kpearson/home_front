@@ -23,9 +23,8 @@ class TilesController < ApplicationController
 
   def update
     #tile = current_user.tiles.find(params[:id])
-    # binding.pry
     tile = Tile.find(params[:id])
-    tile.links.update_all(link_params)
+    tile.links.update_attributes(tile_params)
 
     if tile.save
       render json: tile

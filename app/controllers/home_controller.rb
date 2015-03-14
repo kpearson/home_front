@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @tiles = User.find(2).tiles
+    @tiles = current_user.tiles
   end
 end

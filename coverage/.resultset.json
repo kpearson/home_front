@@ -1,0 +1,23 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Kit/turing/projects/home_front/home_front/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Kit/turing/projects/home_front/home_front/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Kit/turing/projects/home_front/home_front/app/helpers/session_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Kit/turing/projects/home_front/home_front/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1426352435
+  }
+}

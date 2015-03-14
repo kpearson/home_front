@@ -3,6 +3,7 @@
 ( function () {
   HomeFront.TileView = Backbone.View.extend({
     tagName: "li",
+    className: "tile",
 
     initialize: function (options) {
       options.parentView.$el.append(this.$el);
