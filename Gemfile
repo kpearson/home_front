@@ -13,6 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 gem 'puma'
 gem 'omniauth-twitter'
+gem 'omniauth-github', '~> 1.1.2'
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 gem 'dotenv-rails', :groups => [:development, :test]
