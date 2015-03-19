@@ -23,8 +23,9 @@ class TilesController < ApplicationController
 
   def update
     #tile = current_user.tiles.find(params[:id])
+    # require 'pry'; binding.pry
     tile = Tile.find(params[:id])
-    tile.links.update_attributes(tile_params)
+    tile.update_attributes(tile_params)
 
     if tile.save
       render json: tile
@@ -36,7 +37,7 @@ class TilesController < ApplicationController
   private
 
   def tile_params
-    params.permit(:title, links: [:description, :url])
+    params.require(:tile).permit(:title, links_attributes: [:id, :description, :url])
   end
 
   def link_params

@@ -31,7 +31,7 @@
         model: this.model,
         parentView: this })
       this.render();
-    }
+    },
 
     renderGithubLogin: function () {
       this.tileView = new HomeFront.TileGithubLoginView({
@@ -39,7 +39,7 @@
         parentView: this
       })
       this.render();
-    }
+    },
 
     renderGithubShow: function () {
       this.tileView = new HomeFront.TileGithubLoginView({

@@ -19,6 +19,7 @@ gem 'factory_girl_rails', :group => :test
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
 gem 'active_model_serializers'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'ejs'
 gem 'faraday'
 

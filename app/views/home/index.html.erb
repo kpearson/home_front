@@ -4,7 +4,6 @@
     <ul id="tile-board" class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
       <div class="row">
         <%= link_to "New Tile", new_tile_path %>
-        <%= link_to "github", github_auth_path %>
          <%# <% @tiles.each do |tile| %>
         <%#   <%= render partial: "tile", locals: { tile: tile } %>
         <%# <% end %>
@@ -16,7 +15,7 @@
 <% content_for :before_javascript do %>
   <script>
     window.onRoutesInitialized = function () {
-      HomeFront.initialTiles = <%= raw @tiles.to_json %>;
+      HomeFront.initialTiles = <%= raw tiles_to_json(@tiles) %>
     }
   </script>
 <% end %>

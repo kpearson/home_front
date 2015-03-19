@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
   def index
     @tiles = current_user.tiles
-    @repos = Repo.all
+    if current_user.github_token
+      repo = Repo.new(current_user.github_token)
+      @repos = repo.all
+    end
   end
 
   def github_initial_auth_request

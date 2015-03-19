@@ -5,7 +5,19 @@
     },
 
     sync: function () {
-      return Backbone.sync("update", this);
+      var _this = this
+      var jqxhr = Backbone.sync("update", this, {
+        attrs: {
+          tile: {
+            title: this.get('title'),
+            links_attributes: this.get('links')
+          }
+        }
+      });
+      jqxhr.then( function(data) {
+        _this.set(data.tile)
+      })
+      return jqxhr
     }
   })
 })()
