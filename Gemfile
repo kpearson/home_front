@@ -13,10 +13,15 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 gem 'puma'
 gem 'omniauth-twitter'
+gem 'omniauth-github', '~> 1.1.2'
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails_12factor', group: :production
+gem 'active_model_serializers'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'ejs'
+gem 'faraday'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -35,3 +40,6 @@ group :test, :development do
   gem 'binding_of_caller'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-backbone'
+end

@@ -1,0 +1,11 @@
+<form>
+  <input type="text" value="<%= title %>" name="tile[title]">
+  <hr>
+  <% links.forEach(function(link, index) { %>
+    <input type="hidden" value="<%= link.id %>" name="tile[links][<%= index %>][id]">
+    <input type="text" value="<%= link.description %>" name="tile[links][<%= index %>][description]">
+    <input type="text" value="<%= link.url %>" name="tile[links][<%= index %>][url]">
+    <hr>
+  <% }) %>
+  <button type="submit">Update</button>
+</form>
