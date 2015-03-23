@@ -37,6 +37,7 @@ class TilesController < ApplicationController
   private
 
   def tile_params
+    params[:links_attributes] ||= []
     params.require(:tile).permit(:title, links_attributes: [:id, :description, :url])
   end
 
