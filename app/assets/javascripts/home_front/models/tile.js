@@ -10,7 +10,7 @@
         attrs: {
           tile: {
             title: this.get('title'),
-            links_attributes: this.get('links')
+            links_attributes: (this.get('links') || [])
           }
         }
       });
