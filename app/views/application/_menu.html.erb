@@ -12,24 +12,19 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if current_user %>
+          <i class="fi-social-github"></i>
           Welcome <%= current_user.name %>
           <%= link_to "Sign Out", signout_path %>
         <% else %>
           <li class="active"><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
         <% end %>
-        <li class="has-dropdown">
-        <a href="#"></a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-        </li>
-      </ul>
-
+        <% if current_user && current_user.github_token.nil? %>
+          <%= link_to "Github Feed", github_auth_path, :id => "li", :class => "active" %>
+        <% end %>
       <!-- Left Nav Section -->
       <ul class="left">
         <li><a href="#">    </a></li>
       </ul>
     </section>
   </nav>
-</div>
+k</div>
